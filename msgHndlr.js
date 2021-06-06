@@ -97,7 +97,7 @@ module.exports = msgHandler = async (client, message) => {
     const groupAdmins = isGroupMsg ? await client.getGroupAdmins(groupId) : "";
     const isGroupAdmins = isGroupMsg ? groupAdmins.includes(sender.id) : false;
     const isBotGroupAdmins = isGroupMsg
-      ? groupAdmins.includes(botNumber + "@c.us")
+      ? groupAdmins.includes(botNumber + "@c.in")
       : false;
     const isOwner = message.fromMe;
     const isBlocked = blockNumber.includes(sender.id);
@@ -179,7 +179,7 @@ module.exports = msgHandler = async (client, message) => {
         ) {
           msg = isMedia ? message : quotedMsgObj;
           const mediaData = await decryptMedia(msg, uaOverride);
-          client.reply(chatId, "Aankh band karke 10 tak gino :3", id);
+          client.reply(chatId, "Karlo apna time waste, mujhe kya 🤭", id);
           try {
             await client.sendMp4AsSticker(
               chatId,
@@ -501,53 +501,7 @@ module.exports = msgHandler = async (client, message) => {
         // console.log(hehe);
         await client.sendTextWithMentions(chatId, hehe);
         break;
-      // case "!kickallasbasfba":
-      //   if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
-      //   const isGroupOwner = sender.id === chat.groupMetadata.owner;
-      //   if (!isGroupOwner)
-      //     return client.reply(
-      //       chatId,
-      //       "Perintah ini hanya bisa di gunakan oleh Owner group",
-      //       id
-      //     );
-      //   if (!isBotGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       "Perintah ini hanya bisa di gunakan ketika bot menjadi admin",
-      //       id
-      //     );
-      //   const allMem = await client.getGroupMembers(groupId);
-      //   for (let i = 0; i < allMem.length; i++) {
-      //     if (groupAdmins.includes(allMem[i].id)) {
-      //       console.log("Upss this is Admin group");
-      //     } else {
-      //       await client.removeParticipant(groupId, allMem[i].id);
-      //     }
-      //   }
-      //   client.reply(chatId, "Succes kick all member", id);
-      //   break;
-      // // case "!leaveall":
-      //   if (!isOwner) return client.reply(chatId, mess.error.Ow, id);
-      //   const allChats = await client.getAllChatIds();
-      //   const allGroups = await client.getAllGroups();
-      //   for (let gclist of allGroups) {
-      //     await client.sendText(
-      //       gclist.contact.id,
-      //       `Maaf bot sedang pembersihan, total chat aktif : ${allChats.length}`
-      //     );
-      //     await client.leaveGroup(gclist.contact.id);
-      //   }
-      //   client.reply(chatId, "Succes leave all group!", id);
-      //   break;
-      // case "!clearall":
-      //   if (!isOwner)
-      //     return client.reply(chatId, "Perintah ini hanya untuk Owner bot", id);
-      //   const allChatz = await client.getAllChats();
-      //   for (let dchat of allChatz) {
-      //     await client.deleteChat(dchat.id);
-      //   }
-      //   client.reply(chatId, "Succes clear all chat!", id);
-      //   break;
+      
       case "!add":
         const orang = args[1];
         if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
@@ -566,165 +520,9 @@ module.exports = msgHandler = async (client, message) => {
           client.reply(chatId, mess.error.Ad, id);
         }
         break;
-      // case "!kickadfasdfadwf":
-      //   if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
-      //   if (!isGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       mess.error.admin,
-      //       id
-      //     );
-      //   if (!isBotGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       "Perintah ini hanya bisa di gunakan ketika bot menjadi admin",
-      //       id
-      //     );
-      //   if (mentionedJidList.length === 0)
-      //     return client.reply(
-      //       chatId,
-      //       "Untuk menggunakan Perintah ini, kirim perintah *!kick* @tagmember",
-      //       id
-      //     );
-      //   await client.sendText(
-      //     chatId,
-      //     `Perintah diterima, mengeluarkan:\n${mentionedJidList.join("\n")}`
-      //   );
-      //   for (let i = 0; i < mentionedJidList.length; i++) {
-      //     if (groupAdmins.includes(mentionedJidList[i]))
-      //       return client.reply(chatId, mess.error.Ki, id);
-      //     await client.removeParticipant(groupId, mentionedJidList[i]);
-      //   }
-      //   break;
-      // case "!leave":
-      //   if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
-      //   if (!isGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       mess.error.admin,
-      //       id
-      //     );
-      //   await client.sendText(
-      //     chatId,
-      //     "Bancho mai ni ja rha ab; baar baar bulate ho fir nikal dete ;_;"
-      //   );
-      //   //   .then(() => client.leaveGroup(groupId));
-      //   break;
-      // case "!promote":
-      //   if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
-      //   if (!isGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       mess.error.admin,
-      //       id
-      //     );
-      //   if (!isBotGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       "Fitur ini hanya bisa di gunakan ketika bot menjadi admin",
-      //       id
-      //     );
-      //   if (mentionedJidList.length === 0)
-      //     return client.reply(
-      //       chatId,
-      //       "Untuk menggunakan fitur ini, kirim perintah *!promote* @tagmember",
-      //       id
-      //     );
-      //   if (mentionedJidList.length >= 2)
-      //     return client.reply(
-      //       chatId,
-      //       "Maaf, perintah ini hanya dapat digunakan kepada 1 user.",
-      //       id
-      //     );
-      //   if (groupAdmins.includes(mentionedJidList[0]))
-      //     return client.reply(
-      //       chatId,
-      //       "Maaf, user tersebut sudah menjadi admin.",
-      //       id
-      //     );
-      //   await client.promoteParticipant(groupId, mentionedJidList[0]);
-      //   await client.sendTextWithMentions(
-      //     chatId,
-      //     `Perintah diterima, menambahkan @${mentionedJidList[0]} sebagai admin.`
-      //   );
-      //   break;
-      // case "!demote":
-      //   if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
-      //   if (!isGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       mess.error.admin,
-      //       id
-      //     );
-      //   if (!isBotGroupAdmins)
-      //     return client.reply(
-      //       chatId,
-      //       "Fitur ini hanya bisa di gunakan ketika bot menjadi admin",
-      //       id
-      //     );
-      //   if (mentionedJidList.length === 0)
-      //     return client.reply(
-      //       chatId,
-      //       "Untuk menggunakan fitur ini, kirim perintah *!demote* @tagadmin",
-      //       id
-      //     );
-      //   if (mentionedJidList.length >= 2)
-      //     return client.reply(
-      //       chatId,
-      //       "Maaf, perintah ini hanya dapat digunakan kepada 1 orang.",
-      //       id
-      //     );
-      //   if (!groupAdmins.includes(mentionedJidList[0]))
-      //     return client.reply(
-      //       chatId,
-      //       "Maaf, user tersebut tidak menjadi admin.",
-      //       id
-      //     );
-      //   await client.demoteParticipant(groupId, mentionedJidList[0]);
-      //   await client.sendTextWithMentions(
-      //     chatId,
-      //     `Perintah diterima, menghapus jabatan @${mentionedJidList[0]}.`
-      //   );
-      //   break;
-      // case "!join":
-      //   //return client.reply(chatId, 'Jika ingin meng-invite bot ke group anda, silahkan izin ke wa.me/6285892766102', id)
-      //   if (args.length < 2)
-      //     return client.reply(
-      //       chatId,
-      //       "Kirim perintah *!join linkgroup key*\n\nEx:\n!join https://chat.whatsapp.com/blablablablablabla abcde\nuntuk key kamu bisa mendapatkannya hanya dengan donasi 5k",
-      //       id
-      //     );
-      //   const link = args[1];
-      //   const key = args[2];
-      //   const tGr = await client.getAllGroups();
-      //   const minMem = 5;
-      //   const isLink = link.match(/(https:\/\/chat.whatsapp.com)/gi);
-      //   if (key !== "adityaag121")
-      //     return client.reply(
-      //       chatId,
-      //       "*key* salah! silahkan chat owner bot unruk mendapatkan key yang valid",
-      //       id
-      //     );
-      //   const check = await client.inviteInfo(link);
-      //   if (!isLink) return client.reply(chatId, "Ini link? 👊🤬", id);
-      //   if (tGr.length > 15)
-      //     return client.reply(chatId, "Maaf jumlah group sudah maksimal!", id);
-      //   if (check.size < minMem)
-      //     return client.reply(
-      //       chatId,
-      //       "Member group tidak melebihi 30, bot tidak bisa masuk",
-      //       id
-      //     );
-      //   if (check.status === 200) {
-      //     await client
-      //       .joinGroupViaLink(link)
-      //       .then(() => client.reply(chatId, "Bot akan segera masuk!"));
-      //   } else {
-      //     client.reply(chatId, "Link group tidak valid!", id);
-      //   }
-      //   break;
+        
       case "!delete":
-        if (!config.allowDelete) return;
+        // if (!config.allowDelete) return;
         if (!isGroupMsg) return client.reply(chatId, mess.error.Gp, id);
         if (!isGroupAdmins) return client.reply(chatId, mess.error.admin, id);
         if (!quotedMsg)
@@ -739,7 +537,10 @@ module.exports = msgHandler = async (client, message) => {
             "The quoted message is not from the bot!",
             id
           );
-        client.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false);
+        client.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, true);
+        break;
+      case "!meeet":
+        client.reply(chatId, "Here's your link, dan! \nhttps://meet.google.com/dkc-azkt-xyz", id);
         break;
       case "!lyrics":
         if (args.length == 1)
@@ -1031,7 +832,7 @@ module.exports = msgHandler = async (client, message) => {
       case "!info":
         client.sendLinkWithAutoPreview(
           chatId,
-          "https://github.com/adityaag121/whatsapp-bot",
+          "Danyl Fernandes (grewscant)\nhttps://github.com/grewscant/whatsapp-bot",
           info
         );
         break;
@@ -1042,7 +843,7 @@ module.exports = msgHandler = async (client, message) => {
         if (!isOwner && command.startsWith("!"))
           client.reply(
             chatId,
-            "I'm sorry that seems to be an invalid command! Type !help to see all the commands.",
+            "Abey command toh theek se type karle! Type !help to see all the different ways you can waste time.",
             id
           );
     }

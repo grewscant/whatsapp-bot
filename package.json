@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mhank BarBar",
+  "author": "",
   "license": "Apache-2.0",
   "dependencies": {
     "@open-wa/wa-automate": "^3.7.0",
@@ -34,13 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhankbarbar/whatsapp-bot.git"
+    "url": ""
   },
   "keywords": [
     "Whatsapp-Bot"
   ],
   "bugs": {
-    "url": "https://github.com/mhankbarbar/whatsapp-bot/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/mhankbarbar/whatsapp-bot#readme"
+  "homepage": ""
 }
