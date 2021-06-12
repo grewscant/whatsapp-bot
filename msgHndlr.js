@@ -179,7 +179,7 @@ module.exports = msgHandler = async (client, message) => {
         ) {
           msg = isMedia ? message : quotedMsgObj;
           const mediaData = await decryptMedia(msg, uaOverride);
-          client.reply(chatId, "Karlo apna time waste, mujhe kya 🤭", id);
+          client.reply(chatId, '"Sticker banane ke liye dilayi thi maine azaadi?" - Gandhiji', id);
           try {
             await client.sendMp4AsSticker(
               chatId,
